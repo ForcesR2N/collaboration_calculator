@@ -2,6 +2,7 @@ import 'package:collaboration_calculator/Flatshape_calculatorBloc/Flatshapecalcu
 import 'package:collaboration_calculator/Flatshape_calculatorBloc/Flatshapecalculatorscreen/rectangle_calculator_screen.dart';
 import 'package:collaboration_calculator/Flatshape_calculatorBloc/Flatshapecalculatorscreen/square_calculator.dart';
 import 'package:collaboration_calculator/bloc/balok_bloc.dart';
+import 'package:collaboration_calculator/bloc/calculator_bloc.dart';
 import 'package:collaboration_calculator/bloc/counter_bloc.dart';
 import 'package:collaboration_calculator/home_page.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => RectangleCalculatorBloc()),
         BlocProvider(create: (context) => CircleCalculatorBloc()),
         BlocProvider(create: (context) => BalokBloc()),
+        BlocProvider(create: (context) => CalculatorBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
