@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const BmiPage(),
+                            builder: (context) => BmiPage(),
                           ),
                         );
                       },
@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const AritmatikaPage(),
+                            builder: (context) => AritmatikaPage(),
                           ),
                         );
                       },
@@ -88,7 +88,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const GeometryPage(),
+                            builder: (context) => GeometryPage(),
                           ),
                         );
                       },
@@ -112,7 +112,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const FlatShapePage(),
+                            builder: (context) => FlatShapePage(),
                           ),
                         );
                       },
