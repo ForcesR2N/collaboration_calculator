@@ -30,7 +30,7 @@ class _AritmatikaPageState extends State<AritmatikaPage> {
               ),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 8),
             TextField(
               controller: _secondNumberController,
               decoration: InputDecoration(
