@@ -34,7 +34,7 @@ class GeometryPage extends StatelessWidget {
               decoration: InputDecoration(labelText: 'Tinggi'),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {
                 final panjang = double.tryParse(panjangController.text);
