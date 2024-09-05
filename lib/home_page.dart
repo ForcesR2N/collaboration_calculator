@@ -1,8 +1,10 @@
+import 'package:collaboration_calculator/components/my_card.dart';
 import 'package:collaboration_calculator/pages/aritmatika_page.dart';
 import 'package:collaboration_calculator/pages/bmi_page.dart';
 import 'package:collaboration_calculator/pages/flat_shape_page.dart';
 import 'package:collaboration_calculator/pages/geometry_page.dart';
 import 'package:flutter/material.dart';
+import 'package:image_card/image_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -128,6 +130,16 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
+            MyCard(
+              tag: "Calculator",
+              title: "Bmi Calculator",
+              description: "Count your BMI",
+              imageProvider: AssetImage('lib/images/scales.png'),
+              onTagPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BmiPage()),
+              ),
+            )
           ],
         ),
       ),

@@ -15,7 +15,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   syncfusion_flutter_sliders: ^26.2.9
   bloc: ^8.1.4
-  equatable: ^2.0.5 
+  equatable: ^2.0.5
+  image_card: ^0.0.4 
 
 dev_dependencies:
   flutter_test:
