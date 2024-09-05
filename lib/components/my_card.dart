@@ -1,63 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:image_card/image_card.dart';
-import 'package:collaboration_calculator/components/my_colors.dart';
+import 'package:stacked_card_carousel/stacked_card_carousel.dart';
 
-class MyCard extends StatefulWidget {
-  final String tag;
-  final String title;
-  final String description;
-  final ImageProvider imageProvider;
-  final double width;
-  final VoidCallback? onTap;
+class MyCard extends StatelessWidget {
+  final List<FancyCard> cards;
+  const MyCard({super.key, required this.cards});
 
-  const MyCard({
-    super.key,
-    required this.tag,
-    required this.title,
-    required this.description,
-    required this.imageProvider,
-    this.width = 200,
-    required this.onTap,
-  });
-
-  @override
-  _MyCardState createState() => _MyCardState();
-}
-
-class _MyCardState extends State<MyCard> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: TransparentImageCard(
-        width: widget.width,
-        imageProvider: widget.imageProvider,
-        title: _titleWidget(AppColor.mainColor),
-        description: _descriptionWidget(Colors.white),
-        
+    return StackedCardCarousel(
+      items: cards,
+    );
+  }
+}
+
+class FancyCard extends StatelessWidget {
+  const FancyCard({
+    super.key,
+    required this.image,
+    required this.title,
+  });
+
+  final Image image;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4.0,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: 80,
+              height: 100,
+              child: image,
+            ),
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            OutlinedButton(
+              child: const Text("Learn more"),
+              onPressed: () => print("Button was tapped"),
+            ),
+          ],
+        ),
       ),
     );
   }
-
-  Widget _titleWidget(Color color) {
-    return Text(
-      widget.title,
-      style: TextStyle(
-        color: color,
-        fontSize: 15,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-
-  Widget _descriptionWidget(Color color) {
-    return Text(
-      widget.description,
-      style: TextStyle(
-        color: color,
-        fontSize: 10,
-      ),
-    );
-  }
-
-
 }
