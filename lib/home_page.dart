@@ -135,10 +135,7 @@ class HomePage extends StatelessWidget {
               title: "Bmi Calculator",
               description: "Count your BMI",
               imageProvider: AssetImage('lib/images/scales.png'),
-              onTagPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => BmiPage()),
-              ),
+              onTap: () {},
             )
           ],
         ),

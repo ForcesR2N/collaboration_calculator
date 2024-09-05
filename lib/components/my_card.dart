@@ -33,6 +33,7 @@ class _MyCardState extends State<MyCard> {
         imageProvider: widget.imageProvider,
         title: _titleWidget(AppColor.mainColor),
         description: _descriptionWidget(Colors.white),
+        
       ),
     );
   }
