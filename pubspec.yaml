@@ -30,6 +30,9 @@ flutter:
 
   assets:
   - lib/images/human_height.png
+  - lib/images/aritmatika.jpg
+  - lib/images/bangun_datar.jpg
+  - lib/images/bangun_ruang.png
   - lib/images/scales.png
   
 

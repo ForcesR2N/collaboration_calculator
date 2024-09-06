@@ -1,3 +1,4 @@
+import 'package:collaboration_calculator/components/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_card_carousel/stacked_card_carousel.dart';
 
@@ -41,7 +42,9 @@ class FancyCard extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             OutlinedButton(
-              child: const Text("Learn more"),
+              child: const Text(
+                "Count Now!",
+              ),
               onPressed: () => print("Button was tapped"),
             ),
           ],
