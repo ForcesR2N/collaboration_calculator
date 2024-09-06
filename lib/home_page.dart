@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'CALCULATOR APP',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
@@ -35,18 +35,50 @@ class HomePage extends StatelessWidget {
                   FancyCard(
                     image: Image.asset("lib/images/scales.png"),
                     title: "BMI Calculator",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BmiPage(),
+                        ),
+                      );
+                    },
                   ),
                   FancyCard(
                     image: Image.asset("lib/images/bangun_ruang.png"),
                     title: "BMI Calculator",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AritmatikaPage(),
+                        ),
+                      );
+                    },
                   ),
                   FancyCard(
                     image: Image.asset("lib/images/bangun_datar.jpg"),
                     title: "BMI Calculator",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FlatShapePage(),
+                        ),
+                      );
+                    },
                   ),
                   FancyCard(
                     image: Image.asset("lib/images/aritmatika.jpg"),
                     title: "BMI Calculator",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => GeometryPage(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

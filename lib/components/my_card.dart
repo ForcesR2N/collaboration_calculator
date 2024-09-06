@@ -18,11 +18,12 @@ class FancyCard extends StatelessWidget {
   const FancyCard({
     super.key,
     required this.image,
-    required this.title,
+    required this.title, required this.onPressed,
   });
 
   final Image image;
   final String title;
+  final GestureTapCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class FancyCard extends StatelessWidget {
               child: const Text(
                 "Count Now!",
               ),
-              onPressed: () => print("Button was tapped"),
+              onPressed: onPressed,
             ),
           ],
         ),
