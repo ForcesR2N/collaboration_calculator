@@ -34,7 +34,7 @@ class FancyCard extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: <Widget>[
-            Container(
+            SizedBox(
               width: 80,
               height: 100,
               child: image,
@@ -44,11 +44,6 @@ class FancyCard extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             OutlinedButton(
-              child: Text(
-                "Count Now!",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
               onPressed: onPressed,
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.resolveWith<Color>(
@@ -68,20 +63,25 @@ class FancyCard extends StatelessWidget {
                   },
                 ),
                 side: WidgetStateProperty.resolveWith((state) {
-                  Color border_Color;
+                  Color borderColor;
                   if (state.contains(WidgetState.disabled)) {
-                    border_Color = Colors.blue;
+                    borderColor = Colors.blue;
                   } else if (state.contains(WidgetState.pressed)) {
-                    border_Color = AppColor.mainColor;
+                    borderColor = AppColor.mainColor;
                   } else {
-                    border_Color = Colors.black;
+                    borderColor = Colors.black;
                   }
-                  return BorderSide(color: border_Color, width: 1.7);
+                  return BorderSide(color: borderColor, width: 1.7);
                 }),
                 shape: WidgetStateProperty.resolveWith<OutlinedBorder>((_) {
                   return RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16));
                 }),
+              ),
+              child: const Text(
+                "Count Now!",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
           ],
