@@ -59,7 +59,7 @@ class BmiPage extends StatelessWidget {
         context.read<CounterBloc>().add(HeightChangedEvent(newHeight));
       },
       min: 0.0,
-      max: 200.0,
+      max: 250.0,
       showTicks: true,
       showLabels: true,
       enableTooltip: false,
