@@ -13,12 +13,30 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'CALCULATOR APP',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
         backgroundColor: AppColor.mainColor,
-        centerTitle: true,
+        flexibleSpace: const FlexibleSpaceBar(
+          titlePadding: EdgeInsets.only(left: 10),
+          title: Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Choose your',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 27),
+              ),
+              Text(
+                '  calculator',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 27),
+              ),
+            ],
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

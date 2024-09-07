@@ -69,7 +69,7 @@ class FancyCard extends StatelessWidget {
                   } else if (state.contains(WidgetState.pressed)) {
                     borderColor = AppColor.mainColor;
                   } else {
-                    borderColor = Colors.black;
+                    borderColor = Colors.transparent;
                   }
                   return BorderSide(color: borderColor, width: 1.7);
                 }),
