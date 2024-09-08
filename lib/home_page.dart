@@ -5,6 +5,7 @@ import 'package:collaboration_calculator/pages/bmi_page.dart';
 import 'package:collaboration_calculator/pages/flat_shape_page.dart';
 import 'package:collaboration_calculator/pages/geometry_page.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,30 +14,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.mainColor,
-        flexibleSpace: const FlexibleSpaceBar(
-          titlePadding: EdgeInsets.only(left: 10),
-          title: Row(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'Choose your',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    fontSize: 27),
-              ),
-              Text(
-                '  calculator',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 27),
-              ),
-            ],
+        leading: Container(
+            alignment: Alignment.topRight,
+            child: Icon(FontAwesomeIcons.userAstronaut)),
+        title: Text(
+          "QuickMath+",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 27,
           ),
         ),
+        backgroundColor: AppColor.mainColor,
+        
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
