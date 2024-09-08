@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColor.mainColor,
         leading: Container(
             alignment: Alignment.topRight,
             child: Icon(FontAwesomeIcons.userAstronaut)),
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
             fontSize: 27,
           ),
         ),
-        backgroundColor: AppColor.mainColor,
+        
         
       ),
       body: Padding(
