@@ -15,19 +15,25 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.mainColor,
-        leading: Container(
-            alignment: Alignment.topRight,
-            child: Icon(FontAwesomeIcons.userAstronaut)),
-        title: Text(
-          "QuickMath+",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            fontSize: 27,
-          ),
+        title: const Row(
+          children: [
+            Expanded(
+              child: Text(
+                "QuickMath+",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 27,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Icon(
+              Icons.calculate_sharp,
+              size: 40,
+              color: Colors.white,
+            ),
+          ],
         ),
-        
-        
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -54,7 +60,7 @@ class HomePage extends StatelessWidget {
                   ),
                   FancyCard(
                     image: Image.asset("lib/images/bangun_ruang.png"),
-                    title: "BMI Calculator",
+                    title: "Aritmatika Calculator",
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -66,7 +72,7 @@ class HomePage extends StatelessWidget {
                   ),
                   FancyCard(
                     image: Image.asset("lib/images/bangun_datar.jpg"),
-                    title: "BMI Calculator",
+                    title: "2D Shape Calculator",
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -78,7 +84,7 @@ class HomePage extends StatelessWidget {
                   ),
                   FancyCard(
                     image: Image.asset("lib/images/aritmatika.jpg"),
-                    title: "BMI Calculator",
+                    title: "3D Shape Calculator",
                     onPressed: () {
                       Navigator.push(
                         context,

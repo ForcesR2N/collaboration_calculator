@@ -41,7 +41,7 @@ class FancyCard extends StatelessWidget {
             ),
             Text(
               title,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: TextStyle(fontSize: 17),
             ),
             OutlinedButton(
               onPressed: onPressed,
