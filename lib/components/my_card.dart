@@ -31,17 +31,17 @@ class FancyCard extends StatelessWidget {
     return Card(
       elevation: 4.0,
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children: <Widget>[
             SizedBox(
               width: 80,
-              height: 100,
+              height: 70,
               child: image,
             ),
             Text(
               title,
-              style: TextStyle(fontSize: 17),
+              style: TextStyle(fontSize: 14),
             ),
             OutlinedButton(
               onPressed: onPressed,
