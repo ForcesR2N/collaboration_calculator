@@ -15,9 +15,8 @@ class BmiPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "BMI CALCULATOR",
-          style:
-              TextStyle(fontWeight: FontWeight.bold, color: AppColor.textColor),
+          "BMI Calculator",
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: true,
         backgroundColor: AppColor.mainColor,
