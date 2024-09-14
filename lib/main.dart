@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
-        home: const HomePage(),
+        home: HomePage(),
         routes: {
           '/square': (context) => const SquareCalculatorScreen(),
           '/rectangle': (context) => const RectangleCalculatorScreen(),

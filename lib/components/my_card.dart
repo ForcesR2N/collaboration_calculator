@@ -62,21 +62,21 @@ class FancyCard extends StatelessWidget {
                     return Colors.transparent;
                   },
                 ),
-                side: WidgetStateProperty.resolveWith((state) {
-                  Color borderColor;
-                  if (state.contains(WidgetState.disabled)) {
-                    borderColor = Colors.blue;
-                  } else if (state.contains(WidgetState.pressed)) {
-                    borderColor = AppColor.mainColor;
-                  } else {
-                    borderColor = Colors.transparent;
-                  }
-                  return BorderSide(color: borderColor, width: 1.7);
-                }),
-                shape: WidgetStateProperty.resolveWith<OutlinedBorder>((_) {
-                  return RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16));
-                }),
+                // side: WidgetStateProperty.resolveWith((state) {
+                //   Color borderColor;
+                //   if (state.contains(WidgetState.disabled)) {
+                //     borderColor = Colors.blue;
+                //   } else if (state.contains(WidgetState.pressed)) {
+                //     borderColor = AppColor.mainColor;
+                //   } else {
+                //     borderColor = Colors.transparent;
+                //   }
+                //   return BorderSide(color: borderColor, width: 1.7);
+                // }),
+                // shape: WidgetStateProperty.resolveWith<OutlinedBorder>((_) {
+                //   return RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(16));
+                // }),
               ),
               child: const Text(
                 "Count Now!",

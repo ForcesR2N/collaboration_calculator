@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:collaboration_calculator/Flatshape_calculatorBloc/rectangle/rectangle_calculator_bloc.dart';
 import 'package:collaboration_calculator/Flatshape_calculatorBloc/rectangle/rectangle_calculator_state.dart';
 import 'package:collaboration_calculator/Flatshape_calculatorBloc/rectangle/rectangle_calculator_event.dart';
-import '../widgets/reusable_text_field.dart';
+import '../../components/reusable_text_field.dart';
 
 class RectangleCalculatorScreen extends StatelessWidget {
   const RectangleCalculatorScreen({Key? key}) : super(key: key);

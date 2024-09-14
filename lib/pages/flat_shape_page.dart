@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Flatshape_calculatorBloc/widgets/reusable_button.dart';
+import '../components/reusable_button.dart';
 
 class FlatShapePage extends StatefulWidget {
   const FlatShapePage({super.key});
