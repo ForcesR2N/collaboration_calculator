@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'balok_event.dart';
 import 'balok_state.dart';
 
-class Balok {
+class Balok { 
   final double panjang;
   final double lebar;
   final double tinggi;

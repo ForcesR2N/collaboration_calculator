@@ -4,7 +4,11 @@ import '../bloc/balok_bloc.dart';
 import '../bloc/balok_event.dart';
 import '../bloc/balok_state.dart';
 
+<<<<<<< HEAD
 class GeometryPage extends StatelessWidget {
+=======
+class BalokPage extends StatelessWidget {
+>>>>>>> c9b57f40ed7f1f6a8d9c3567b9ba3efc6b639643
   final TextEditingController panjangController = TextEditingController();
   final TextEditingController lebarController = TextEditingController();
   final TextEditingController tinggiController = TextEditingController();
