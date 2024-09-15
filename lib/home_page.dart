@@ -5,24 +5,25 @@ import 'package:collaboration_calculator/pages/bmi_page.dart';
 import 'package:collaboration_calculator/pages/flat_shape_page.dart';
 import 'package:collaboration_calculator/pages/geometry_page.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.mainColor,
-        title: const Row(
+        title: Row(
           children: [
             Expanded(
               child: Text(
                 "QuickMath+",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 27,
+                  fontSize: size.width < 350 ? 22 : 27,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -36,70 +37,65 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             const SizedBox(height: 20),
             Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 8.0,
-                mainAxisSpacing: 8.0,
-                children: [
-                  FancyCard(
-                    image: Image.asset("lib/images/scales.png"),
-                    title: "BMI Calculator",
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => BmiPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  FancyCard(
-                    image: Image.asset("lib/images/bangun_ruang.png"),
-                    title: "Aritmatika Calculator",
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AritmatikaPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  FancyCard(
-                    image: Image.asset("lib/images/bangun_datar.jpg"),
-                    title: "2D Shape Calculator",
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => FlatShapePage(),
-                        ),
-                      );
-                    },
-                  ),
-                  FancyCard(
-                    image: Image.asset("lib/images/aritmatika.jpg"),
-                    title: "3D Shape Calculator",
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => GeometryPage(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: size.width < 500 ? 2 : 3,
+                    crossAxisSpacing: 12.0,
+                    mainAxisSpacing: 12.0,
+                    childAspectRatio: 3 / 4),
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return _buildFancyCard(context, index);
+                },
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildFancyCard(BuildContext context, int index) {
+    List<Map<String, dynamic>> cardData = [
+      {
+        'image': 'lib/images/scales.png',
+        'title': "Bmi Calculator",
+        'page': BmiPage(),
+      },
+      {
+        'image': 'lib/images/aritmatika.jpg',
+        'title': "Aritmatika Calculator",
+        'page': AritmatikaPage(),
+      },
+      {
+        'image': 'lib/images/bangun_datar.jpg',
+        'title': "2D Calculator",
+        'page': FlatShapePage(),
+      },
+      {
+        'image': 'lib/images/bangun_ruang.png',
+        'title': "3D Calculator",
+        'page': GeometryPage(),
+      },
+    ];
+    final cardInfo = cardData[index];
+
+    return FancyCard(
+      image: Image.asset(cardInfo['image']),
+      title: cardInfo['title'],
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => cardInfo['page'],
+          ),
+        );
+      },
     );
   }
 }
