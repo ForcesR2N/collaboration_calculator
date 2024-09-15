@@ -2,18 +2,6 @@ import 'package:collaboration_calculator/components/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_card_carousel/stacked_card_carousel.dart';
 
-class MyCard extends StatelessWidget {
-  final List<FancyCard> cards;
-  const MyCard({super.key, required this.cards});
-
-  @override
-  Widget build(BuildContext context) {
-    return StackedCardCarousel(
-      items: cards,
-    );
-  }
-}
-
 class FancyCard extends StatelessWidget {
   const FancyCard({
     super.key,
@@ -29,62 +17,82 @@ class FancyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4.0,
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              width: 80,
-              height: 100,
-              child: image,
-            ),
-            Text(
-              title,
-              style: TextStyle(fontSize: 17),
-            ),
-            OutlinedButton(
-              onPressed: onPressed,
-              style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.resolveWith<Color>(
-                  (states) {
-                    if (states.contains(WidgetState.disabled)) {
-                      return Colors.grey;
-                    }
-                    return AppColor.mainColor;
-                  },
-                ),
-                overlayColor: WidgetStateProperty.resolveWith<Color>(
-                  (state) {
-                    if (state.contains(WidgetState.pressed)) {
-                      return Colors.white;
-                    }
-                    return Colors.transparent;
-                  },
-                ),
-                side: WidgetStateProperty.resolveWith((state) {
-                  Color borderColor;
-                  if (state.contains(WidgetState.disabled)) {
-                    borderColor = Colors.blue;
-                  } else if (state.contains(WidgetState.pressed)) {
-                    borderColor = AppColor.mainColor;
-                  } else {
-                    borderColor = Colors.transparent;
-                  }
-                  return BorderSide(color: borderColor, width: 1.7);
-                }),
-                shape: WidgetStateProperty.resolveWith<OutlinedBorder>((_) {
-                  return RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16));
-                }),
+      elevation: 6.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadius.circular(16),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                width: 100,
+                height: 100,
+                child: image,
               ),
-              child: const Text(
-                "Count Now!",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              const SizedBox(height: 16),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
               ),
-            ),
-          ],
+              const SizedBox(height: 16),
+              OutlinedButton(
+                onPressed: onPressed,
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                    (states) {
+                      if (states.contains(MaterialState.disabled)) {
+                        return Colors.grey;
+                      }
+                      return AppColor.mainColor;
+                    },
+                  ),
+                  overlayColor: MaterialStateProperty.resolveWith<Color>(
+                    (states) {
+                      if (states.contains(MaterialState.pressed)) {
+                        return Colors.white.withOpacity(0.2);
+                      }
+                      return Colors.transparent;
+                    },
+                  ),
+                  side: MaterialStateProperty.resolveWith<BorderSide>(
+                    (states) {
+                      if (states.contains(MaterialState.pressed)) {
+                        return BorderSide(
+                          color: AppColor.mainColor,
+                          width: 1.5,
+                        );
+                      }
+                      return BorderSide.none;
+                    },
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                  child: Text(
+                    "Count Now!",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
