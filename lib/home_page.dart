@@ -46,10 +46,11 @@ class HomePage extends StatelessWidget {
                 builder: (context, constraints) {
                   return GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: size.width < 500 ? 2 : 3,
-                        crossAxisSpacing: 12.0,
-                        mainAxisSpacing: 12.0,
-                        childAspectRatio: 3 / 4),
+                      crossAxisCount: size.width < 500 ? 2 : 3,
+                      crossAxisSpacing: 12.0,
+                      mainAxisSpacing: 12.0,
+                      childAspectRatio: 3 / 4,
+                    ),
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return _buildFancyCard(context, index);
