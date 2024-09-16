@@ -11,23 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< HEAD
+
   flutter_bloc: ^8.1.0
-=======
-  flutter_bloc: ^8.0.0
-  equatable: ^2.0.0
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
->>>>>>> c9b57f40ed7f1f6a8d9c3567b9ba3efc6b639643
   cupertino_icons: ^1.0.6
   syncfusion_flutter_sliders: ^26.2.9
   bloc: ^8.1.4
   equatable: ^2.0.5
   image_card: ^0.0.4 
   stacked_card_carousel: ^0.0.4
-  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:
