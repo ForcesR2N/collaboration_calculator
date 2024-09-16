@@ -17,6 +17,7 @@ class FancyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+
       elevation: 6.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -40,7 +41,7 @@ class FancyCard extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
-                ),
+                  ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16),
