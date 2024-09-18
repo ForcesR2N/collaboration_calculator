@@ -8,16 +8,17 @@ class FancyCard extends StatelessWidget {
     required this.image,
     required this.title,
     required this.onPressed,
+    this.scaleFactor = 1.0,
   });
 
   final Image image;
   final String title;
   final GestureTapCallback onPressed;
+  final double scaleFactor;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-
       elevation: 6.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -31,20 +32,20 @@ class FancyCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                width: 100,
-                height: 100,
+                width: 100 * scaleFactor,
+                height: 100 * scaleFactor,
                 child: image,
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16 * scaleFactor),
               Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 16,
+                style: TextStyle(
+                  fontSize: 16 * scaleFactor,
                   fontWeight: FontWeight.w600,
-                  ),
+                ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16 * scaleFactor),
               OutlinedButton(
                 onPressed: onPressed,
                 style: ButtonStyle(
@@ -81,14 +82,16 @@ class FancyCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 8.0 * scaleFactor,
+                      vertical: 4.0 * scaleFactor),
                   child: Text(
                     "Count Now!",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16 * scaleFactor),
                   ),
                 ),
               ),

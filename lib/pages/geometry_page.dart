@@ -7,9 +7,6 @@ import '../bloc/balok_state.dart';
 
 class GeometryPage extends StatelessWidget {
 
-class GeometryPage extends StatelessWidget {
-
-class BalokPage extends StatelessWidget {
 
   final TextEditingController panjangController = TextEditingController();
   final TextEditingController lebarController = TextEditingController();

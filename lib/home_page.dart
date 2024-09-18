@@ -12,6 +12,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final double baseWidth = 1344.0;
+    double scaleFactor = size.width / baseWidth;
+
+    scaleFactor = scaleFactor.clamp(0.8, 1.2);
 
     return Scaffold(
       appBar: AppBar(
@@ -23,37 +27,38 @@ class HomePage extends StatelessWidget {
                 "QuickMath+",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: size.width < 350 ? 22 : 27,
+                  fontSize: 27 * scaleFactor,
                   fontWeight: FontWeight.bold,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ),
             Icon(
               Icons.calculate_sharp,
-              size: 40,
+              size: 40 * scaleFactor,
               color: Colors.white,
             ),
           ],
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0 * scaleFactor),
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            SizedBox(height: 20 * scaleFactor),
             Expanded(
               child: LayoutBuilder(
                 builder: (context, constraints) {
                   return GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: size.width < 500 ? 2 : 3,
-                      crossAxisSpacing: 12.0,
-                      mainAxisSpacing: 12.0,
-                      childAspectRatio: 3 / 4,
+                      crossAxisCount: size.width < 600 ? 2 : 3,
+                      crossAxisSpacing: 12.0 * scaleFactor,
+                      mainAxisSpacing: 12.0 * scaleFactor,
+                      childAspectRatio: size.width < 600 ? 3 / 4 : 4 / 5,
                     ),
                     itemCount: 4,
                     itemBuilder: (context, index) {
-                      return _buildFancyCard(context, index);
+                      return _buildFancyCard(context, index, scaleFactor);
                     },
                   );
                 },
@@ -65,7 +70,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildFancyCard(BuildContext context, int index) {
+  Widget _buildFancyCard(BuildContext context, int index, double scaleFactor) {
     List<Map<String, dynamic>> cardData = [
       {
         'image': 'lib/images/scales.png',
@@ -93,6 +98,7 @@ class HomePage extends StatelessWidget {
     return FancyCard(
       image: Image.asset(cardInfo['image']),
       title: cardInfo['title'],
+      scaleFactor: scaleFactor,
       onPressed: () {
         Navigator.push(
           context,
